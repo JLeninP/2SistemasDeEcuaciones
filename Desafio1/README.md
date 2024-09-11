@@ -29,34 +29,44 @@ Así la tabla quedaría de la siguiente forma:
 |Grava Gruesa (%)|18|30|55|
 
 Y el sistema asociado de la siguiente forma:
+
 $$0.52x_1+0.20x_2+0.25x3=4800$$
+
 $$0.30x_1+0.50x_2+0.20x3=5810$$
+
 $$0.18x_1+0.30x_2+0.55x3=5690$$
 
 luego, haciendo uso de algebra lineal hallamos los valores para $x_1, x_2 \text{ y } x_3$, mediante la siguiente igualdad:
+
 $$AX=b\hspace{1cm}\text{(1)}$$
 
 donde:
+
 $$A = \left( \begin{matrix}
 0.52 & 0.20 & 0.25 \\
 0.30 & 0.50 & 0.20 \\
 0.18 & 0.30 & 0.55
 \end{matrix} \right )$$
+
 $$X = \left(\begin{matrix}
 x_1\\
 x_2\\
 x_3
 \end{matrix}\right)$$
+
 $$b = \left(\begin{matrix}
 4800\\
 5810\\
 5690
 \end{matrix}\right)$$
+
 Y para la solución se realiza el despeje de $X$, entonces la ecuación (1) qudaría de la siguiente forma:
+
 $$X=A^{-1}b\hspace{1cm}\text{(2)}$$
 
 ### Solucion en Excel:
 Mediante el uso de la funcion **MINVERSA(:)** hallamos la inversa de la matriz A y con la función **MMULT(: ; :)** realizamos el producto de las matrices $A^{-1}$ y $b$. El resultado sería el siguinete:
+
 ![Solución en Excel](solExcel.PNG)
 
 ### Solucion en Python:
@@ -102,7 +112,7 @@ Y la solucion sería:
 ```
 
 ## Interpretación de los resultados
-Para cumplir con los requerimientos del Ingeniero de cada cantera se debe transportar las siguientes cantidades en $m^3$ de materia prima:
+Para cumplir con los requerimientos del Ingeniero, cada cantera debe extraer las siguientes cantidades en $m^3$ de materia prima:
 
 * **Cantera 1**: Debe extraer aproximadamente 4011.63 $m^3$ de materia prima, del cual se obtendrá un 52% de arena, 30% de grava fina y 18% de grava gruesa.
 
