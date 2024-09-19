@@ -16,21 +16,27 @@ date: "19-09-24"
 
 #### Captura de la solución en Octave con LU
 ```{octave}
-octave:1> A = [8, 4, 1; -2, 5, 1; 2, -1, 6]
+A = [8, 4, -1; -2, 5, 1; 2, -1, 6]
+b = [11; 4; 7]
+[L, U] = lu(A)
+d = inv(L)*b
+x = inv(U) * d
+```
+##### Salida en pantalla
+```{octave}
+
 A =
 
-   8   4   1
+   8   4  -1
   -2   5   1
    2  -1   6
 
-octave:2> b = [11; 4; 7]
 b =
 
    11
     4
     7
 
-octave:3> [L, U] = lu(a)
 L =
 
    1.0000        0        0
@@ -39,23 +45,21 @@ L =
 
 U =
 
-   8.0000   4.0000   1.0000
-        0   6.0000   1.2500
-        0        0   6.1667
+   8.0000   4.0000  -1.0000
+        0   6.0000   0.7500
+        0        0   6.5000
 
-octave:5> d = inv(L)*b
 d =
 
    11.0000
     6.7500
     6.5000
 
-octave:6> x = inv(U) * d
 x =
 
-   0.7905
-   0.9054
-   1.0541
+   1
+   1
+   1
 ```
 
 #### Gráfica en 3D Captura y Código en Python
@@ -68,7 +72,7 @@ from mpl_toolkits.mplot3d import Axes3D
 
 # Definir las ecuaciones
 def eq1(x, y):
-    return (-11 - 8 * x + 4 * y)  # x3 = -11 - 8x1 + 4x2
+    return (-11 + 8 * x + 4 * y)  # x3 = -11 - 8x1 + 4x2
 
 def eq2(x, y):
     return (4 + 2 * x - 5 * y)  # x3 = 4 + 2x1 - 5x2

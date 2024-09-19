@@ -4,7 +4,7 @@ from mpl_toolkits.mplot3d import Axes3D
 
 # Definir las ecuaciones
 def eq1(x, y):
-    return (-11 - 8 * x + 4 * y)  # x3 = -11 - 8x1 + 4x2
+    return (-11 + 8 * x + 4 * y)  # x3 = -11 - 8x1 + 4x2
 
 def eq2(x, y):
     return (4 + 2 * x - 5 * y)  # x3 = 4 + 2x1 - 5x2
