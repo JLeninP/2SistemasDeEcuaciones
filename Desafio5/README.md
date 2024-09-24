@@ -44,8 +44,9 @@ y2 = eq2(x)
 plt.figure(figsize=(8, 6))
 
 # Graficar las líneas
-plt.plot(x, y1, label='Ecuación 1: y = 2x + 1', color='red')
-plt.plot(x, y2, label='Ecuación 2: y = -x + 4', color='blue')
+plt.plot(x, y1, label='Ecuación 1: x2 = -1.0001/1.0000x1 + 2/1.0000', color='red')
+plt.plot(x, y2, label='Ecuación 2: x2 = -1.0000/1.0000x1 + 2/1.0000', color='blue')
+
 
 # Configurar límites y etiquetas
 plt.xlim(-5, 5)
