@@ -85,7 +85,7 @@ Vemos que el determinante calculado es proximo a $0$, lo que muestra que existe 
 
 ### Condicional
 
-El número de condición ( $\kappa(A)$) se define como:
+El número de condición ($\kappa(A)$) se define como:
 
 $$κ(A)=∥A∥⋅∥A^{−1}∥$$
 
@@ -112,6 +112,7 @@ Donde se observa que el resultado $5313.1$ es muy grande, por lo tanto se puede 
 Realizando un cambio en el elemento $a_{11} = 1$ de la matriz $A$ por $\tilde{a}_{11} = 0.9$, se obtiene la matriz modificada $\tilde{A}$.
 
 entonces, se tiene:
+
 $$A = \begin{bmatrix}
 1 & 10.01 & 100 \\
 2.12 & 20 & 200 \\
