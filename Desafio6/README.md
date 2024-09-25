@@ -85,7 +85,7 @@ Vemos que el determinante calculado es proximo a $0$, lo que muestra que existe 
 
 ### Condicional
 
-El número de condición ($\kappa(A)$) se define como:
+El número de condición $\kappa(A)$ se define como:
 
 $$κ(A)=∥A∥⋅∥A^{−1}∥$$
 
