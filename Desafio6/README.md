@@ -20,67 +20,26 @@ $$3.1x_1 + 30x_2 + 300x_3 = 400$$
 ### Determinante
 Si el determinante es cero o muy cercano a cero, el sistema está mal condicionado, lo que implica que las soluciones pueden ser inestables.
 
+Del ejemplo planteado se tiene:
 $$A = \begin{bmatrix}
 1 & 10.01 & 100 \\
 2.12 & 20 & 200 \\
 3.1 & 30 & 300
 \end{bmatrix}$$
 
-Calculando el determinante de la matriz $A$ por el método de matriz de cofactores.
+Con ayuda de la función **det()** de **Octave**
+se obtiene el siguiente resultado.
+```{octave}
+A =
 
-$$|A| = \sum_{j=1}^{n}(-1)^{i+j}a_{ij}M_{ij}\text{    para } i=1, 2, ..., n$$
+     1.0000    10.0100   100.0000
+     2.1200    20.0000   200.0000
+     3.1000    30.0000   300.0000
 
-entnoces:
+det(A)
 
-$$|A| = \begin{vmatrix}
-1 & 10.01 & 100 \\
-2.12 & 20 & 200 \\
-3.1 & 30 & 300
-\end{vmatrix}$$
-
-$$=\begin{vmatrix}
-20 & 200 \\
-30 & 300
-\end{vmatrix} - 
-10.01*\begin{vmatrix}
-2.12 & 200 \\
-3.1 & 300
-\end{vmatrix} +
-100*\begin{vmatrix}
-2.12 & 20 \\
-3.1 & 30
-\end{vmatrix}$$
-
-$$=\left(
-20*|300|-200*|30|
-\right) - 
-10.01\left(
-2.12*|300| - 200*|3.1|\right) +
-100\left(
-2.12*|30| - 20*|3.1|
-\right)$$
-
-$$=\left(
-6000-6000
-\right) - 
-10.01\left(
-636 - 620\right) +
-100\left(
-63.6 - 62
-\right)$$
-
-$$=
-0 - 
-10.01\left(
-16\right) +
-100\left(
-1.6
-\right)$$
-
-$$=-160.16 + 160$$
-
-$$= -0.16$$
-
+ans = -0.1600
+```
 Vemos que el determinante calculado es proximo a $0$, lo que muestra que existe una gran probabilidad de que el sistema este mal condicionado, pero dicha conclusión es un poco ambigua ya que no nos indican cuán cercano a cero debe estar el determinante calculado, por lo que se procedera a calcular el numero de condición o condicional.
 
 ### Condicional
@@ -105,7 +64,7 @@ cond(A)
 ans = 5.3131e+04
 ```
 
-Donde se observa que el resultado $5313.1$ es muy grande, por lo tanto se puede confirmar el mal condicionamiento del sistema.
+Donde se observa que el resultado $5313.1$ es muy grande, por lo tanto se confirma el mal condicionamiento del sistema.
 
 ### Pequeños cambios cambian radicalmente la solución
 
@@ -143,7 +102,7 @@ b1 = [200; 300; 400]
 x = inv(A)*b
 x1 = inv(A1)*b1
 ```
-Respuesta:
+Solución:
 ```{octave}
 x =
 
@@ -212,8 +171,6 @@ con ayuda de **Python** se obtiene el siguiente gráfico en 3 dimensiones del si
 Realizando un acercamiento al gráfico se observa que los planos podrían ser paralelos, lo que significaría que el sistema podría contar con infinitas soluciones.
 
 ![GraficoZoom](img2.png)
-
-En un sistema mal condicionado esto quiere decir que un amplio rango de resultados pueden satisfacer las ecuaciones en forma aproximada.
 
 ## Conclusion:
 Los sistemas mal condicionados presentan problemas cuando se encuentran durante la solución númerica de ecuciones lineales, lo cual se debe a que este tipo de sistemas son extremadamente sensibles a los errores de redondeo.
